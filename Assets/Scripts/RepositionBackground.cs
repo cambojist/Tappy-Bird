@@ -6,12 +6,11 @@ public class RepositionBackground : MonoBehaviour
 {
     private const float Speed = 1;
     private const float Threshold = -2.64f;
-    private Vector2 _startPos;
+    private static readonly Vector2 StartPos = new(2.86f, 0);
 
     void Start()
     {
         var sprite = GetComponent<SpriteRenderer>().sprite;
-        _startPos = new Vector2(sprite.rect.x, sprite.rect.y);
     }
 
     void Update()
@@ -19,7 +18,7 @@ public class RepositionBackground : MonoBehaviour
         transform.Translate(Speed * Time.deltaTime * Vector2.left);
         if (transform.position.x < Threshold)
         {
-            transform.position = _startPos;
+            transform.position = StartPos;
         }
     }
 }
