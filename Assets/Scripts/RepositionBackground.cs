@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class RepositionBackground : MonoBehaviour
 {
-    private const float Speed = 1;
-    private const float Threshold = -2.64f;
-    private static readonly Vector2 StartPos = new(2.86f, 0);
+    [SerializeField]
+    private float speed;
+    [SerializeField]
+    private float threshold;
+    [SerializeField]
+    private Vector2 startPos;
 
     void Start()
     {
@@ -15,10 +19,10 @@ public class RepositionBackground : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Speed * Time.deltaTime * Vector2.left);
-        if (transform.position.x < Threshold)
+        transform.Translate(speed * Time.deltaTime * Vector2.left);
+        if (transform.position.x < threshold)
         {
-            transform.position = StartPos;
+            transform.position = startPos;
         }
     }
 }
