@@ -27,8 +27,8 @@ public class SpawnManager : MonoBehaviour
         {
             yield return new WaitForSeconds(time);
             var y = Random.Range(minY, maxY);
-            Instantiate(pipe, new Vector2(spawnX, y), Quaternion.identity);
-            Instantiate(pipe, new Vector2(spawnX, y + 10), Quaternion.Euler(180, 0, 0));
+            PoolManager.SpawnObject(pipe, new Vector2(spawnX, y), Quaternion.identity);
+            PoolManager.SpawnObject(pipe, new Vector2(spawnX, y + 10), Quaternion.Euler(180, 0, 0));
         }
     }
 }
