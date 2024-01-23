@@ -1,15 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Pipe : MonoBehaviour
 {
-    [SerializeField] 
-    private float speed = 1f;
+    [SerializeField] private float speed = 1f;
 
-    private float _despawnPosX = -6;
+    private readonly float _despawnPosX = -6;
 
-    void Update()
+    private void Update()
     {
         MoveLeft();
         DespawnPipe();
@@ -23,6 +20,6 @@ public class Pipe : MonoBehaviour
 
     private void MoveLeft()
     {
-        transform.Translate(speed * Time.deltaTime * Vector2.left);    
+        transform.Translate(speed * Time.deltaTime * Vector2.left);
     }
 }

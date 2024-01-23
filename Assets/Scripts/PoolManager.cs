@@ -1,11 +1,10 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class PoolManager : MonoBehaviour
 {
-    public static readonly List<GameObject> ObjectsPool = new ();
+    public static readonly List<GameObject> ObjectsPool = new();
 
     public static GameObject SpawnObject(GameObject go, Vector2 spawnPosition, Quaternion spawnRotation)
     {
