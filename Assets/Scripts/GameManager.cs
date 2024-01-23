@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
     public void ChangeScore(int score)
     {
         _score += score;
+        if (_score % 10 == 0) AudioManager.Instance.PlaySfx(AudioManager.Sfx.Point);
         _uiManager.ChangeScore(_score);
     }
 
