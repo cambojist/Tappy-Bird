@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
     {
         if (Input.touchCount < 1) return;
         if (Input.GetTouch(0).phase != TouchPhase.Began) return;
+        AudioManager.Instance.PlaySfx(AudioManager.Sfx.Wing);
         _playerRb.velocity = Vector2.zero;
         _playerRb.AddForce(upForce * Time.fixedDeltaTime * Vector2.up, ForceMode2D.Impulse);
     }

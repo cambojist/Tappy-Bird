@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         _uiManager.ShowGameOverScreen();
+        AudioManager.Instance.PlaySfx(AudioManager.Sfx.Die);
         Stop();
     }
 
