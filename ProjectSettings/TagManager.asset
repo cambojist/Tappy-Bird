@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Background
   - Obstacle
+  - Trigger
   layers:
   - Default
   - TransparentFX
